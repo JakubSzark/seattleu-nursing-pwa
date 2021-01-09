@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/JakubSzark/seattleu-nursing-pwa/issues"
   },
-  "homepage": "https://github.com/JakubSzark/seattleu-nursing-pwa#readme"
+  "homepage": "https://github.com/JakubSzark/seattleu-nursing-pwa#readme",
+  "dependencies": {}
 }

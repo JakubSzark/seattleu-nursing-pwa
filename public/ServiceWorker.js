@@ -11,7 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const cacheName = 'sucs-cache';
 // Put important files here
 const initialCachedFiles = [
-    "index.html"
+    "index.html",
+    "Images/Favicon.png",
+    "Core/Main.js",
+    "ServiceWorker.js"
 ];
 // Handy method for printing with Serice Worker prefix
 function log(message) {
@@ -33,7 +36,7 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request).then((cacheResponse) => {
         log(`Fetching Resource [${event.request.url}]`);
         // If we already have it return, if not retrieve from internet
-        return cacheResponse || fetch(event.response).then((response) => __awaiter(void 0, void 0, void 0, function* () {
+        return cacheResponse || fetch(event.request).then((response) => __awaiter(void 0, void 0, void 0, function* () {
             log(`Caching New Resource: ${event.request.url}`);
             // Clone the data we just retrieved into cache
             const cache = yield caches.open(cacheName);

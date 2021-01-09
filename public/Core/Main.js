@@ -1,24 +1,8 @@
-"use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-function installServiceWorker() {
-    return __awaiter(this, void 0, void 0, function* () {
-        if ('serviceWorker' in navigator) {
-            const path = './ServiceWorker.js';
-            yield navigator.serviceWorker.register(path);
-        }
-        else {
-            console.warn("Service workers are not supported!");
-        }
-    });
+function main() {
+    console.log("[Main]: Loaded");
+    if (!navigator.onLine) {
+        const offlineMode = document.querySelector('#offline-mode');
+        offlineMode === null || offlineMode === void 0 ? void 0 : offlineMode.attributes.removeNamedItem('hidden');
+    }
 }
-(() => __awaiter(void 0, void 0, void 0, function* () {
-    yield installServiceWorker();
-}))();
+export default main;

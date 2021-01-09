@@ -2,7 +2,10 @@ const cacheName = 'sucs-cache';
 
 // Put important files here
 const initialCachedFiles = [
-    "index.html"
+    "index.html",
+    "Images/Favicon.png",
+    "Core/Main.js",
+    "ServiceWorker.js"
 ];
 
 // Handy method for printing with Serice Worker prefix
@@ -30,7 +33,7 @@ self.addEventListener('fetch', (event: any) => {
             log(`Fetching Resource [${event.request.url}]`);
 
             // If we already have it return, if not retrieve from internet
-            return cacheResponse || fetch(event.response).then(async (response) => {
+            return cacheResponse || fetch(event.request).then(async (response) => {
                 log(`Caching New Resource: ${event.request.url}`);
 
                 // Clone the data we just retrieved into cache
