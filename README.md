@@ -14,3 +14,10 @@ This is a <strong>work-in-progress</strong> app in charge of time clocking and s
 - Tony Pham (Project Manager)
 - Kevin Herron (Assi. Project Manager)
 - Andy Nguyen (Technical Writer)
+
+## Date Keeping
+Todo |
+---- |
+
+Date | Description |
+---- | ---- |
