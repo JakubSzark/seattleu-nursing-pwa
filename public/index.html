@@ -10,39 +10,24 @@
     <!-- Links -->
     <link rel="shortcut icon" href="./Images/Favicon.png" type="image/x-icon">
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
         defer></script>
+
+    <!-- Initialization Script -->
+    <script type="module" defer>
+        if ('serviceWorker' in navigator) {
+            const path = './ServiceWorker.js';
+            navigator.serviceWorker.register(path);
+        }
+    </script>
 </head>
 
 <body>
-    <!-- This element is used to signify if the app is in offline mode -->
-    <div id="offline-mode" hidden>Offline Mode</div>
-
-    <script type="module">
-        import main from './Core/Main.js'
-
-        if ('serviceWorker' in navigator) {
-            const path = './ServiceWorker.js';
-            navigator.serviceWorker.getRegistration(path).then((res) => {
-                if (res === undefined) {
-                    // If we don't have this service registered. Register it.
-                    navigator.serviceWorker.register(path).then((r) => {
-                        main();
-                    });
-                } else {
-                    console.log("[Already Loaded]");
-                    main();
-                }
-            });
-        }
-    </script>
+    <script src="./Core/Main.js"></script>
 </body>
 
 </html>
