@@ -5,9 +5,22 @@ import AppFooter from "./components/app-footer.js";
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-    state: {},
-    mutations: {},
-    actions: {}
+    state: {
+        page: 0,
+    },
+    mutations: {
+        CHANGE_PAGE: function(state, index) {
+            state.page = index;
+        }
+    },
+    actions: {
+        changePage: function(context, index) {
+            if (context.state.page !== index) {
+                console.log(`store: changing to page ${index}`)
+                context.commit("CHANGE_PAGE", index);
+            }
+        }
+    }
 });
 
 new Vue({
