@@ -7,27 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
 
-    <!-- Links -->
-    <link rel="shortcut icon" href="./Images/Favicon.png" type="image/x-icon">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"
-        defer></script>
+    <!-- Links -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
+
+    <!-- Firebase -->
+    <script src="/__/firebase/8.2.5/firebase-app.js"></script>
+    <script src="/__/firebase/8.2.5/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.2.5/firebase-firestore.js"></script>
+    <script src="/__/firebase/8.2.5/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
 
     <!-- Initialization Script -->
     <script type="module" defer>
-        if ('serviceWorker' in navigator) {
-            const path = './ServiceWorker.js';
-            navigator.serviceWorker.register(path);
-        }
+        // if ('serviceWorker' in navigator) {
+        //     const path = './service_worker.js';
+        //     navigator.serviceWorker.register(path);
+        // }
     </script>
 </head>
 
 <body>
-    <script src="./Core/Main.js"></script>
+    <div id="app"></div>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

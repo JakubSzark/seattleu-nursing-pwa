@@ -1,0 +1,77 @@
+:root {
+  --white: #F7F7F7;
+  --red: #DA0028;
+  --gold: #F6D140;
+  --black: #121212;
+}
+
+* {
+  margin: 0;
+  outline: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Lato', Verdana, monospace;
+  font-size: 1rem;
+}
+
+html, body {
+  overflow: hidden;
+  background: var(--white);
+}
+
+.app {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 4rem auto 4rem;
+      grid-template-rows: 4rem auto 4rem;
+  min-height: 100vh;
+}
+
+.app-nav, .app-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  background: var(--red);
+}
+
+.app-nav .app-nav-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-family: 'PT Serif', Georgia, serif;
+  color: var(--white);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.app-footer .app-footer-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app-footer .app-footer-link span {
+  color: var(--white);
+  font-size: 0.75rem;
+}
+/*# sourceMappingURL=style.css.map */

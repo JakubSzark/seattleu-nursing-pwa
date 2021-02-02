@@ -1,10 +1,11 @@
 {
-    "name": "Seattle University Clocking System",
-    "short_name": "SUCS",
+    "name": "Polonez Automotive",
+    "short_name": "PA",
     "start_url": "/public/index.html",
     "icons": [],
     "theme_color": "#000000",
     "background_color": "#FFFFFF",
     "display": "fullscreen",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "lang": "en"
 }

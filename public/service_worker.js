@@ -3,22 +3,23 @@ const cacheName = 'sucs-cache';
 // Put important files here
 const initialCachedFiles = [
     "index.html",
-    "Images/Favicon.png",
-    "Core/Main.js",
-    "ServiceWorker.js"
+    "images/icon.png",
+    "js/main.js",
+    "service_worker.js",
+    "css/style.css"
 ];
 
 // Handy method for printing with Serice Worker prefix
-function log(message: string): void {
-    console.log(`[Service Worker]: ${message}`);
+function log(message) {
+    console.log(`worker: ${message}`);
 }
 
 // Install this service worker and cache initial files
-self.addEventListener('install', (event: any) => {
-    log("Installing");
+self.addEventListener('install', (event) => {
+    log("installing");
     event.waitUntil(
         caches.open(cacheName).then((cache) => {
-            log("Caching Initial Files...");
+            log("caching initial files...");
             return cache.addAll(initialCachedFiles)
                 .catch((err) => console.log(err));
         })
@@ -26,15 +27,15 @@ self.addEventListener('install', (event: any) => {
 });
 
 // Await browser to fetch for resources
-self.addEventListener('fetch', (event: any) => {
+self.addEventListener('fetch', (event) => {
     event.respondWith(
         // We want to check and see if we already cached the request
         caches.match(event.request).then((cacheResponse) => {
-            log(`Fetching Resource [${event.request.url}]`);
+            log(`fetching resource\n[${event.request.url}]`);
 
             // If we already have it return, if not retrieve from internet
             return cacheResponse || fetch(event.request).then(async (response) => {
-                log(`Caching New Resource: ${event.request.url}`);
+                log(`caching new resource\n[${event.request.url}]`);
 
                 // Clone the data we just retrieved into cache
                 const cache = await caches.open(cacheName);
