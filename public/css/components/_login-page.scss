@@ -1,0 +1,55 @@
+.login-page {
+    @include flex(center, center);
+    flex-direction: column;
+    height: 100%;
+
+    .login-page-title {
+        font-size: 2rem;
+        color: var(--red);
+        font-family: var(--fancy);
+        text-align: center;
+        margin: 1rem 0 2rem 0;
+    }
+
+    .login-page-form {
+        @include flex(center, center);
+        flex-direction: column;
+    }
+
+    .back-btn {
+        background: var(--red);
+        color: var(--white);
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        padding: 0 0 0.2rem 0;
+        font-size: 1.2rem;
+        color: var(--red);
+    }
+
+    input[type="email"], input[type="password"] {
+        min-width: 300px;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+        background: none;
+        font-size: 1.1rem;
+
+        border-bottom: 2px solid var(--red);
+    }
+
+    input[type="submit"] {
+        min-width: 200px;
+        padding: 1rem 2rem;
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+        background: white;
+        border-radius: 2rem;
+        color: var(--red);
+    }
+}

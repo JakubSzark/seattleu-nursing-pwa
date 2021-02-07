@@ -6,7 +6,7 @@ const AppFooter = {
                 @click="onLinkPressed(0)"
             >
                 <img
-                    src="./images/home.svg"
+                    src="./images/icons/home.svg"
                     alt="home"
                     width="38px"
                 >
@@ -16,7 +16,7 @@ const AppFooter = {
                 @click="onLinkPressed(1)"
             >
                 <img
-                    src="./images/book.svg"
+                    src="./images/icons/book.svg"
                     alt="booking"
                     width="38px"
                     
@@ -27,7 +27,7 @@ const AppFooter = {
                 @click="onLinkPressed(2)"
             >
                 <img
-                    src="./images/contact.svg"
+                    src="./images/icons/contact.svg"
                     alt="contact"
                     width="38px"
                 >

@@ -1,14 +1,16 @@
-@mixin flex($justify, $align) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-}
+@import 'components/app';
+@import 'components/base-card';
+@import 'components/login-page';
+@import 'components/profile-page';
+@import 'components/home-page';
 
 :root {
     --white: #F7F7F7;
     --red: #DA0028;
     --gold: #F6D140;
     --black: #121212;
+
+    --fancy: 'PT Serif', Georgia, serif;
 }
 
 * {
@@ -24,42 +26,6 @@
 }
 
 html, body {
-    overflow: hidden;
     background: var(--white);
-}
-
-.app {
-    display: grid;
-    grid-template-rows: 4rem auto 4rem;
     min-height: 100vh;
-}
-
-.app-nav, .app-footer {
-    @include flex(space-around, center);
-
-    height: 100%;
-    background: var(--red);
-}
-
-.app-nav {
-    .app-nav-name {
-        font-size: 1.4rem;
-        font-weight: bold;
-        font-variant: small-caps;
-        font-family: 'PT Serif', Georgia, serif;
-        color: var(--white);
-        user-select: none;
-    }
-}
-
-.app-footer {
-    .app-footer-link {
-        @include flex(center, center);
-        flex-direction: column;
-
-        span {
-            color: var(--white);
-            font-size: 0.75rem;
-        }
-    }
 }

@@ -4,7 +4,7 @@ const AppNav = {
         <nav class="app-nav">
             <img 
                 class="app-nav-logo"
-                src="./images/logo.svg" 
+                src="./images/icons/logo.svg" 
                 alt="logo" 
                 width="42px" 
                 @click="onLogoPressed"
@@ -14,20 +14,33 @@ const AppNav = {
             </div>
             <img
                 class="app-nav-account"
-                src="./images/account.svg"
+                :src="accountImage"
                 alt="account"
                 width="42px"
                 @click="onAccountPressed"
             >
         </nav>
     `,
+    computed: {
+        accountImage: function() {
+            const isLoggedIn = this.$store.state.user !== undefined;
+
+            if (isLoggedIn) {
+                const profileImg = this.$store.state.user.photoURL;
+                return profileImg !== null ? profileImg : "./images/icons/account.svg";
+            } else {
+                return "./images/icons/login.svg";
+            }
+        }
+    },
     methods: {
         onLogoPressed: function() {
-            console.log("nav: logo pressed");
+            this.$store.dispatch('changePage', 0);
         },
 
         onAccountPressed: function() {
-            console.log("nav: account pressed");
+            const isLoggedIn = this.$store.state.user !== undefined;
+            this.$store.dispatch('changePage', isLoggedIn ? 4 : 3);
         }
     }
 };

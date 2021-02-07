@@ -1,0 +1,54 @@
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.app {
+    display: grid;
+    grid-template-rows: 4rem auto 4rem;
+    height: 100vh;
+}
+
+.app-nav, .app-footer {
+    @include flex(space-around, center);
+
+    height: 100%;
+    background: var(--red);
+}
+
+.app-nav {
+    .app-nav-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-variant: small-caps;
+        font-family: var(--fancy);
+
+        width: 50%;
+        letter-spacing: 0.5px;
+        line-height: 1.5rem;
+
+        color: var(--white);
+        text-align: center;
+        user-select: none;
+    }
+}
+
+.app-footer {
+    .app-footer-link {
+        @include flex(center, center);
+        flex-direction: column;
+
+        span {
+            color: var(--white);
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.app-content {
+    height: 100%;
+    padding: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
