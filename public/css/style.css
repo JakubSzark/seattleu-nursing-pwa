@@ -1,12 +1,48 @@
 .app {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 4rem auto 4rem;
-      grid-template-rows: 4rem auto 4rem;
+  -ms-grid-rows: 3.5rem auto 3.5rem;
+      grid-template-rows: 3.5rem auto 3.5rem;
   height: 100vh;
 }
 
 .app-nav, .app-footer {
+  height: 100%;
+  background: var(--red);
+}
+
+.app-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1rem;
+  -webkit-box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-nav .app-nav-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-family: var(--fancy);
+  letter-spacing: 0.5px;
+  line-height: 1.3rem;
+  width: 50%;
+  color: var(--white);
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.app-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,24 +51,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  background: var(--red);
-}
-
-.app-nav .app-nav-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-variant: small-caps;
-  font-family: var(--fancy);
-  width: 50%;
-  letter-spacing: 0.5px;
-  line-height: 1.5rem;
-  color: var(--white);
-  text-align: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -webkit-box-shadow: 0 -8px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -8px 4px rgba(0, 0, 0, 0.1);
 }
 
 .app-footer .app-footer-link {
@@ -58,75 +78,68 @@
 
 .app-content {
   height: 100%;
-  padding: 1rem;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
-.base-card {
-  width: 100%;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 512px;
+.home-page,
+.booking-page,
+.contact-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0.5rem;
+  gap: 0.5rem;
 }
 
-.base-card .base-card-image {
-  overflow: hidden;
+.booking-page .booking-page-buttons {
+  padding-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.booking-page .booking-page-buttons button {
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  background: var(--red);
+  border-radius: 10px;
+}
+
+.booking-page .booking-page-buttons button:disabled {
+  background: lightgrey;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.contact-page-map {
   position: relative;
-  height: 200px;
+  width: 100%;
+  height: 512px;
+  max-width: 512px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.base-card .base-card-image img {
-  width: 200%;
+.contact-page-map img {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.base-card .base-card-text {
-  padding: 1rem 1rem;
-}
-
-.base-card .base-card-text h2 {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
-  font-variant: small-caps;
-  font-family: var(--fancy);
-  line-height: 2rem;
-}
-
-.base-card .base-card-desc {
-  font-size: 1.1rem;
-}
-
-.base-card .base-card-desc h3 {
-  font-size: 1.2rem;
-  padding-top: 0.5rem;
-  text-decoration: underline;
-  font-weight: lighter;
-}
-
-.base-card .base-card-desc p, .base-card .base-card-desc ul, .base-card .base-card-desc li {
-  font-size: 1.1rem;
-  line-height: 2rem;
-}
-
-.base-card .base-card-desc ul {
-  padding: 0 1rem;
-}
-
-.base-card .base-card-desc ul li {
-  margin-left: 1rem;
-}
-
-.base-card .base-card-desc br {
-  line-height: 1rem;
-}
-
-.base-card .base-card-desc .center {
-  text-align: center;
+  height: 100%;
 }
 
 .login-page {
@@ -241,22 +254,89 @@
   border-radius: 1rem;
 }
 
-.home-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.calendar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 1rem;
-  gap: 1rem;
+  gap: 0.25rem;
+}
+
+.calendar span {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.calendar button {
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 2.5px;
+}
+
+.calendar button:disabled {
+  color: rgba(0, 0, 0, 0.5);
+  background: lightgrey;
+  cursor: auto;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 512px;
+  padding: 0.5rem;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  padding: 0.5rem 1rem;
+  font-variant: small-caps;
+  font-family: var(--fancy);
+  font-size: 1.4rem;
+}
+
+.card .card-desc a {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.card .card-desc p, .card .card-desc a {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.card .card-desc p, .card .card-desc li, .card .card-desc ul {
+  font-size: 1.1rem;
+  line-height: 1.75rem;
+  z-index: 10;
+}
+
+.card img {
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+  border-radius: 5px;
+}
+
+.card .center {
+  text-align: center;
 }
 
 :root {
@@ -274,7 +354,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: var(--black);
-  font-family: 'Lato', Verdana, monospace;
+  font-family: 'Open Sans', Verdana, monospace;
   font-size: 1rem;
 }
 

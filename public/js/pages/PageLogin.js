@@ -1,5 +1,4 @@
-const LoginPage = {
-    name: 'login-page',
+export default {
     template: `
         <div class="login-page">
             <img 
@@ -63,5 +62,3 @@ const LoginPage = {
         }
     }
 };
-
-export default LoginPage;

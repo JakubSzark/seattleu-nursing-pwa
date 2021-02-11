@@ -1,5 +1,4 @@
-const ProfilePage = {
-    name: 'profile-page',
+export default {
     template: `
         <div class="profile-page">
             <img
@@ -31,5 +30,3 @@ const ProfilePage = {
         }
     }
 };
-
-export default ProfilePage;

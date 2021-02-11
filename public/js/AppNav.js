@@ -1,12 +1,11 @@
-const AppNav = {
-    name: 'app-nav',
+export default {
     template: `
         <nav class="app-nav">
             <img 
                 class="app-nav-logo"
                 src="./images/icons/logo.svg" 
                 alt="logo" 
-                width="42px" 
+                width="38px" 
                 @click="onLogoPressed"
             >
             <div class="app-nav-name">
@@ -16,7 +15,7 @@ const AppNav = {
                 class="app-nav-account"
                 :src="accountImage"
                 alt="account"
-                width="42px"
+                width="38px"
                 @click="onAccountPressed"
             >
         </nav>
@@ -44,5 +43,3 @@ const AppNav = {
         }
     }
 };
-
-export default AppNav;

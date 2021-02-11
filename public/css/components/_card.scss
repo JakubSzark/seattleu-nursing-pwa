@@ -1,0 +1,47 @@
+.card {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 512px;
+    
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    h2 {
+        padding: 0.5rem 1rem;
+        
+        font-variant: small-caps;
+        font-family: var(--fancy);
+        font-size: 1.4rem;
+    }
+
+    .card-desc {
+        a {
+            display: block;
+            font-size: 1.2rem;
+        }
+    
+        p, a {
+            padding: 0 1rem 1rem 1rem;
+        }
+    
+        p, li, ul {
+            font-size: 1.1rem;
+            line-height: 1.75rem;
+            z-index: 10;
+        }
+    }
+
+    img {
+        left: 0;
+        top: 0;
+        width: 100%;
+        pointer-events: none;
+        border-radius: 5px;
+    }
+
+    .center {
+        text-align: center;
+    }
+}

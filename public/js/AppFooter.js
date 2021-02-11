@@ -1,5 +1,4 @@
-const AppFooter = {
-    name: 'app-footer',
+export default {
     template: `
         <footer class="app-footer">
             <div class="app-footer-link"
@@ -8,7 +7,7 @@ const AppFooter = {
                 <img
                     src="./images/icons/home.svg"
                     alt="home"
-                    width="38px"
+                    width="30px"
                 >
                 <span>Home</span>
             </div>
@@ -18,7 +17,7 @@ const AppFooter = {
                 <img
                     src="./images/icons/book.svg"
                     alt="booking"
-                    width="38px"
+                    width="30px"
                     
                 >
                 <span>Booking</span>
@@ -29,7 +28,7 @@ const AppFooter = {
                 <img
                     src="./images/icons/contact.svg"
                     alt="contact"
-                    width="38px"
+                    width="30px"
                 >
                 <span>Contact</span>
             </div>
@@ -41,5 +40,3 @@ const AppFooter = {
         }
     }
 };
-
-export default AppFooter;

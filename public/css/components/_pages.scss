@@ -1,0 +1,126 @@
+.home-page,
+.booking-page,
+.contact-page {
+    @include flex(center, center);
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+.booking-page {
+    .booking-page-buttons {
+        padding-top: 1rem;
+        display: flex;
+        gap: 1rem;
+
+        button {
+            font-size: 1.3rem;
+            padding: 0.5rem 1rem;
+            color: var(--white);
+            background: var(--red);
+            border-radius: 10px;
+
+            &:disabled {
+                background: lightgrey;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+.contact-page-map {
+    position: relative;
+    width: 100%;
+    height: 512px;
+    max-width: 512px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+    }
+}
+
+.login-page {
+    @include flex(center, center);
+    flex-direction: column;
+    height: 100%;
+
+    .login-page-title {
+        font-size: 2rem;
+        color: var(--red);
+        font-family: var(--fancy);
+        text-align: center;
+        margin: 1rem 0 2rem 0;
+    }
+
+    .login-page-form {
+        @include flex(center, center);
+        flex-direction: column;
+    }
+
+    .back-btn {
+        background: var(--red);
+        color: var(--white);
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        padding: 0 0 0.2rem 0;
+        font-size: 1.2rem;
+        color: var(--red);
+    }
+
+    input[type="email"], input[type="password"] {
+        min-width: 300px;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+        background: none;
+        font-size: 1.1rem;
+
+        border-bottom: 2px solid var(--red);
+    }
+
+    input[type="submit"] {
+        min-width: 200px;
+        padding: 1rem 2rem;
+        margin-top: 0.5rem;
+        font-size: 1.5rem;
+        background: white;
+        border-radius: 2rem;
+        color: var(--red);
+    }
+}
+
+.profile-page {
+    @include flex(center, center);
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+
+    .profile-page-info p {
+        font-size: 1.2rem;
+    }
+
+    img {
+        background: var(--red);
+        border-radius: 50%;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        color: var(--white);
+        background: var(--red);
+        border-radius: 1rem;
+    }
+}

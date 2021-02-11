@@ -1,6 +1,6 @@
-import AppNav from "./components/app-nav.js";
-import AppContent from "./components/app-content.js";
-import AppFooter from "./components/app-footer.js";
+import AppNav from "./AppNav.js";
+import AppContent from "./AppContent.js";
+import AppFooter from "./AppFooter.js";
 
 // Vue
 
@@ -68,9 +68,9 @@ new Vue({
     store: store,
     template: `
         <div class="app">
-            <app-nav :style="isFullscreen" />
-            <app-content />
-            <app-footer :style="isFullscreen" />
+            <AppNav :style="isFullscreen" />
+            <AppContent />
+            <AppFooter :style="isFullscreen" />
         </div>
     `,
     components: {
