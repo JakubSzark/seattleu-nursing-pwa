@@ -1,23 +1,15 @@
 export default {
     template: `
-        <div class="login-page">
+        <div class="signup-page">
             <img src="./images/icons/back.svg" alt="back" 
-                width="42px" class="back-button" @click="onBackPressed">
-                
-            <img 
-                src="./images/icons/logo.svg"
-                alt="logo"
-                width="72px"
-            >
-
+                    width="42px" class="back-button" @click="onBackPressed">
             <div class="login-page-title">
-                POLONEZ AUTOMOTIVE
+                Create an Account
             </div>
-
             <form class="login-page-form" @submit="onSubmit">
                 <div class="form-entry">
                     <label for="email">Email Address</label>
-                    <input 
+                    <input
                         type="email" 
                         name="email" 
                         id="email" 
@@ -37,8 +29,18 @@ export default {
                         required
                     > 
                 </div>
-                <input type="submit" value="Login" />
-                <input type="button" value="Sign Up" @click="onSignupPressed" />
+                <div class="form-entry">
+                    <label for="password">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        name="confirm-password" 
+                        id="confirm-password" 
+                        placeholder="*********"
+                        v-model="passwordConfirm"
+                        required
+                    > 
+                </div>
+                <input type="submit" value="Sign Up" />
             </form>
         </div>
     `,
@@ -46,6 +48,7 @@ export default {
         return {
             email: "",
             password: "",
+            passwordConfirm: "",
         };
     },
     mounted: function() {
@@ -53,22 +56,19 @@ export default {
     },
     methods: {
         onBackPressed: function() {
-            this.$store.dispatch('changePage', 0);
+            this.$store.dispatch('changePage', 3);
         },
 
         onSubmit: function(e) {
-            if (this.email.length > 0 && this.password.length > 0) {
-                this.$store.dispatch('signIn', { 
-                    email: this.email, 
-                    password: this.password 
-                });
-            }
+            if (this.email.length > 0 && this.password.length > 0 && 
+                this.password == this.passwordConfirm) {
+                    this.$store.dispatch('signUp', { 
+                        email: this.email, 
+                        password: this.password 
+                    });
+                }
 
             e.preventDefault();
-        },
-
-        onSignupPressed: function() {
-            this.$store.dispatch('changePage', 5);
         }
     }
 };

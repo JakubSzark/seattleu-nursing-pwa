@@ -1,6 +1,6 @@
 export default {
     template: `
-        <nav class="app-nav">
+        <nav class="app-nav" :style="hidden">
             <img 
                 class="app-nav-logo"
                 src="./images/icons/logo.svg" 
@@ -8,9 +8,9 @@ export default {
                 width="38px" 
                 @click="onLogoPressed"
             >
-            <div class="app-nav-name">
+            <p class="app-nav-name">
                 Polonez Automotive
-            </div>
+            </p>
             <img
                 class="app-nav-account"
                 :src="accountImage"
@@ -20,6 +20,9 @@ export default {
             >
         </nav>
     `,
+    props: {
+        isScrolled: false,
+    },
     computed: {
         accountImage: function() {
             const isLoggedIn = this.$store.state.user !== undefined;
@@ -30,6 +33,12 @@ export default {
             } else {
                 return "./images/icons/login.svg";
             }
+        },
+
+        hidden: function() {
+            return {
+                top: this.isScrolled ? '-3.5rem' : '0',
+            };
         }
     },
     methods: {

@@ -3,10 +3,10 @@ import Card from "../components/Card.js";
 export default {
     template: `
         <div class="home-page">
-            <Card>
+            <Card class="gold-card">
                 <h2 class="center"><u>Open 9AM - 6PM on Weekdays</u></h2>
             </Card>
-            
+
             <Card 
                 :imageUrl="'./images/shop/1.jpg'" 
                 :title="'About Us'"
@@ -40,7 +40,7 @@ export default {
                 </p>
             </Card>
 
-            <Card :title="'Payment Options'">
+            <Card :imageUrl="'./images/payment_options.jpg'" :title="'Payment Options'">
                 <p>
                     Many payment and financing options are available 
                     including AARP and military discounts.
@@ -53,14 +53,13 @@ export default {
                 </ul>
                 <br>
             </Card>
-
-            <Card :title="'Questions?'">
-                <a href="#" @click="onContactUsPressed">Contact Us</a>
-            </Card>
         </div>
     `,
     components: {
         Card
+    },
+    mounted: function() {
+        this.$store.dispatch("setFullscreen", false);
     },
     methods: {
         onContactUsPressed: function() {

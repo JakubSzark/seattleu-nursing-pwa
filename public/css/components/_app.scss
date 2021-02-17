@@ -1,7 +1,8 @@
 .app {
-    display: grid;
-    grid-template-rows: 3.5rem auto 3.5rem;
-    height: 100vh;
+    @include flex(center, center);
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
 }
 
 .app-nav, .app-footer {
@@ -10,18 +11,27 @@
 }
 
 .app-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    z-index: 100;
+
     @include flex(space-between, center);
     padding: 0 1rem;
-    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: top 0.2s;
 
     .app-nav-name {
         font-size: 1.5rem;
         font-weight: bold;
         font-variant: small-caps;
         font-family: var(--fancy);
+        padding: 0 0 0.2rem 0;
 
-        letter-spacing: 0.5px;
-        line-height: 1.3rem;
+        letter-spacing: 0.25px;
+        line-height: 1.2rem;
         width: 50%;
 
         color: var(--white);
@@ -31,8 +41,15 @@
 }
 
 .app-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 3.5rem;
+    z-index: 100;
+
     @include flex(space-around, center);
-    box-shadow: 0 -8px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem 0.5rem 0 0;
 
     .app-footer-link {
         @include flex(center, center);
@@ -46,7 +63,17 @@
 }
 
 .app-content {
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    padding: 3.5rem 0;
+    overflow: hidden;
+    transition: margin 0.4s;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }

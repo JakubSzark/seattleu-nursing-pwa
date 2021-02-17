@@ -24,6 +24,9 @@ export default {
                 `${this.$store.state.user.email}` : "";
         }
     },
+    mounted: function() {
+        this.$store.dispatch("setFullscreen", false);
+    },
     methods: {
         onSignOutPressed: function() {
             this.$store.dispatch('signOut');
