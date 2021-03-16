@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital@0;1&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  color: #121212;
+}
+
+html,
+body {
+  background: url("./images/bg-2.png");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  min-height: 100vh;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #da0028;
+  padding: 0 0.5rem;
+  height: 3.5rem;
+}
+#navbar img {
+  width: 2.5rem;
+}
+#navbar h1 {
+  width: 50%;
+  text-align: center;
+  margin-top: -2px;
+  color: #f7f7f7;
+  font-family: "PT Serif", serif;
+  font-variant: small-caps;
+  font-size: 1.6rem;
+  line-height: 1.2rem;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  max-width: 512px;
+  padding: 4.5rem 1rem;
+}
+
+#footer {
+  position: fixed;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  background: #da0028;
+  overflow: hidden;
+  height: 3.5rem;
+}
+#footer button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  transition: background 0.2s;
+}
+#footer button img {
+  width: 2rem;
+}
+#footer button span {
+  font-size: 0.75rem;
+  color: #f7f7f7;
+}
+#footer button:disabled {
+  background: darkred;
+  transition: background 0.2s;
+}
+
+#back {
+  position: absolute;
+  top: 0.5rem;
+  right: auto;
+  bottom: auto;
+  left: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: #da0028;
+}
+#back img {
+  width: 2rem;
+}
+
+#message {
+  position: fixed;
+  top: 5rem;
+  right: 1rem;
+  bottom: auto;
+  left: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-variant: small-caps;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  color: #da0028;
+  border: 2px solid #da0028;
+  background: #f7f7f7;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(100, 100, 100, 0.4);
+  background: #f7f7f7;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.card .card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 1rem;
+  padding-bottom: 0.5rem;
+}
+.card .card-text * {
+  width: 100%;
+}
+.card img {
+  width: 100%;
+  border-bottom: 4px solid #da0028;
+}
+
+.map-card {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.map-card img {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+h1 {
+  font-family: "PT Serif", serif;
+  font-variant: small-caps;
+  font-size: 2rem;
+  color: #da0028;
+}
+
+h2 {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+h3 {
+  padding: 0.5rem 0;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+strong,
+li {
+  font-size: 1.1rem;
+}
+
+p,
+ul {
+  font-size: 1.1rem;
+  line-height: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+hr {
+  height: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin: 1rem auto;
+  width: 100%;
+}
+
+ul {
+  padding-left: 2rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.gold {
+  background: linear-gradient(121deg, #f6d140 0%, #ffab00 100%) !important;
+}
+.gold span {
+  font-weight: bold;
+  color: #121212 !important;
+}
+
+.pad {
+  padding: 1rem;
+}
+
+#login-requirement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-btn {
+  background: #da0028;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #f7f7f7;
+  margin-top: 1rem;
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+.profile-page img {
+  background: #da0028;
+  border-radius: 50%;
+  width: 64px;
+  border: 0;
+  margin-bottom: 1rem;
+}
+.profile-page button {
+  color: #f7f7f7;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  background: #da0028;
+}
+
+.booking-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto 0;
+}
+.booking-page button {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.booking-page #day-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  width: 100%;
+  margin: 1rem 0;
+}
+.booking-page #day-buttons button {
+  margin: 0 0.25rem;
+  padding: 0.5rem;
+  background: #f7f7f7;
+  border-radius: 5px;
+}
+.booking-page #day-buttons button .day {
+  font-style: italic;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.75);
+}
+.booking-page #day-buttons button:disabled {
+  background: #da0028;
+}
+.booking-page #day-buttons button:disabled * {
+  color: #f7f7f7;
+}
+.booking-page #timeslots {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.booking-page #timeslots .timeslot {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.1rem;
+  background: #f7f7f7;
+  border-radius: 10px;
+  width: 100%;
+  gap: 0.5rem;
+}
+.booking-page #timeslots .timeslot:disabled {
+  background: linear-gradient(121deg, #d9d7d3 0%, #e4ddcf 100%);
+}
+.booking-page #timeslots .timeslot:disabled span {
+  color: rgba(0, 0, 0, 0.5);
+}
+.booking-page .cancel-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #da0028;
+  color: #f7f7f7;
+  padding: 0.5rem 0.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+form h1 {
+  margin-bottom: 1rem;
+}
+form label {
+  color: #da0028;
+}
+form input[type=email],
+form input[type=password],
+form input[type=number],
+form input[type=text],
+form select {
+  min-width: 256px;
+  border-radius: 10px;
+  border-bottom: 2px solid #da0028;
+  margin-bottom: 1rem;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  appearance: none;
+}
+form input[type=submit],
+form input[type=button] {
+  width: 256px;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  background: white;
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

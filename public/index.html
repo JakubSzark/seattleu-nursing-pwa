@@ -2,45 +2,47 @@
 <html lang="en">
 
 <head>
-    <!-- Metadata -->
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./images/icons/icon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polonez Automotive</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./style.css">
 
-    <!-- Links -->
-    <link rel="manifest" href="./manifest.json">
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
-
-    <!-- Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://unpkg.com/vuex"></script>
-
-    <!-- Firebase -->
-    <script src="/__/firebase/8.2.5/firebase-app.js"></script>
-    <script src="/__/firebase/8.2.5/firebase-analytics.js"></script>
-    <script src="/__/firebase/8.2.5/firebase-firestore.js"></script>
-    <script src="/__/firebase/8.2.5/firebase-auth.js"></script>
-    <script src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <!-- Initialization Script -->
-    <script type="module" defer>
-        // if ('serviceWorker' in navigator) {
-        //     const path = './service_worker.js';
-        //     navigator.serviceWorker.register(path);
-        // }
-    </script>
+    <!-- Scripts -->
+    <script src="./bundle.js" defer></script>
 </head>
 
 <body>
-    <div id="app"></div>
-    <script type="module" src="./js/App.js"></script>
+    <div id="message" style="display: none;">
+        Your Message Here
+    </div>
+    <button id="back" style="display: none;">
+        <img src="./images/icons/back.svg" alt="back">
+    </button>
+    <nav id="navbar">
+        <img src="./images/icons/icon.svg" alt="logo">
+        <h1>Polonez Automotive</h1>
+        <img src="./images/icons/login.svg" alt="login">
+    </nav>
+    <main id="content"><img src="./images/icons/loading.gif" alt="loading..."></main>
+    <footer id="footer">
+        <button id="home-btn">
+            <img src="./images/icons/home.svg" alt="home">
+            <span>Home</span>
+        </button>
+        <button id="booking-btn">
+            <img src="./images/icons/book.svg" alt="booking">
+            <span>Booking</span>
+        </button>
+        <button id="contact-btn">
+            <img src="./images/icons/contact.svg" alt="contact">
+            <span>Contact</span>
+        </button>
+    </footer>
 </body>
 
 </html>

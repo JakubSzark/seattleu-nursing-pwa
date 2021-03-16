@@ -1,0 +1,73 @@
+h1 {
+    font-family: $fancyFont;
+    font-variant: small-caps;
+    font-size: 2rem;
+    color: $red;
+}
+
+h2 {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+h3 {
+    padding: 0.5rem 0;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+strong,
+li {
+    font-size: 1.1rem;
+}
+
+p,
+ul {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+hr {
+    height: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 1rem auto;
+    width: 100%;
+}
+
+ul {
+    padding-left: 2rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.gold {
+    background: $goldGrad !important;
+
+    span {
+        font-weight: bold;
+        color: $black !important;
+    }
+}
+
+.pad {
+    padding: 1rem;
+}
+
+// Login Req
+
+#login-requirement {
+    @include flex(column, center, center);
+}
+
+.login-btn {
+    background: $red;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: $white;
+    margin-top: 1rem;
+}

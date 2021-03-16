@@ -1,0 +1,35 @@
+form {
+    @include flex(column, center, center);
+    margin: auto 0;
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        color: $red;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="text"],
+    select {
+        min-width: 256px;
+        border-radius: 10px;
+        border-bottom: 2px solid $red;
+        margin-bottom: 1rem;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        appearance: none;
+    }
+
+    input[type="submit"],
+    input[type="button"] {
+        width: 256px;
+        padding: 0.75rem 2rem;
+        border-radius: 10px;
+        background: white;
+        margin-top: 1rem;
+    }
+}

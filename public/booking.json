@@ -1,0 +1,36 @@
+{
+    "carTypes": [
+        "Acura",
+        "Buick",
+        "BMW",
+        "Chevrolet",
+        "Cadillac",
+        "Chrysler",
+        "Dodge",
+        "Ford",
+        "GMC",
+        "Honda",
+        "Hyundai",
+        "Infiniti",
+        "Jeep",
+        "Kia",
+        "Lexus",
+        "Lincoln",
+        "Mercedes-Benz",
+        "Nissan",
+        "Ram",
+        "Subaru",
+        "Toyota",
+        "Volvo",
+        "Volkswagen",
+        "Other"
+    ],
+    "problems": [
+        "Oil Change",
+        "Oil Leak",
+        "Unknown Noise",
+        "Part Replacement",
+        "Custom Part Installation",
+        "Engine Code"
+    ]
+}
